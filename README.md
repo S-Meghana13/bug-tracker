@@ -1,6 +1,6 @@
 # Bug Tracker
 
-![Dashboard Screenshot](bugtracker/static/tracker/dashboard.png)  
+![Dashboard Screenshot](/home/apiiit123/Desktop/bugtracker/tracker/static/tracker/dashboard.png)
 *Replace the path with your actual screenshot file.*
 
 ## Project Overview
