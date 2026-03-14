@@ -1,7 +1,12 @@
 # Bug Tracker
+## Screenshots
 
-![Dashboard Screenshot](/home/apiiit123/Desktop/bugtracker/tracker/static/tracker/dashboard.png)
-*Replace the path with your actual screenshot file.*
+
+**Home Page:**  
+![Home Page Screenshot](tracker/static/tracker/home-bug.png)  
+
+**Dashboard:**  
+![Dashboard Screenshot](tracker/static/tracker/dashboard.png)  
 
 ## Project Overview
 **Bug Tracker** is a **web-based bug and project management system** built using **Django** and **SQLite**.  
