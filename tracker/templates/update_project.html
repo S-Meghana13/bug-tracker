@@ -1,0 +1,22 @@
+<!-- {% load static %}
+<h1>Update Project</h1>
+<link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{ project.name }}" placeholder="Project Name" required>
+    <textarea name="description" placeholder="Project Description" required>{{ project.description }}</textarea>
+    <button type="submit">Update</button>
+</form> -->
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+
+<div class="update-project-container">
+    <h1>Update Project</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{ project.name }}" placeholder="Project Name" required>
+        <textarea name="description" placeholder="Project Description" required>{{ project.description }}</textarea>
+        <button type="submit">Update</button>
+    </form>
+</div>

@@ -1,0 +1,615 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+h1, h2 {
+    color: #333;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #0056b3;
+}
+button, .btn {
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slide-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.priority-low {
+    color: green;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: orange;
+    font-weight: bold;
+}
+
+.priority-high {
+    color: red;
+    font-weight: bold;
+}
+table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin-bottom: 5px;
+    }
+}
+
+
+.card:nth-of-type(1) {
+    background-color: #ffedd5; /* Project Management - soft peach */
+    color: #7f1d1d;
+}
+
+.card:nth-of-type(2) {
+    background-color: #dbeafe; /* Bug Tracking - light blue */
+    color: #1e3a8a;
+}
+
+.card:nth-of-type(3) {
+    background-color: #dcfce7; /* Collaboration - light green */
+    color: #166534;
+}
+.card:nth-of-type(4) {
+    background-color: #dcfce7; /* Collaboration - light green */
+    color: #2f3d34;
+}
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+/* Update/Edit Button */
+.edit-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Optional: make buttons smaller on mobile */
+@media screen and (max-width: 768px) {
+    .update-btn, .delete-btn {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+/* Form Container 
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* Form Headings 
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input Fields 
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buttons 
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Update Button 
+button[type="submit"]:not(.delete-btn) {
+    background-color: #28a745; /* Green 
+    color: white;
+    margin-right: 10px;
+}
+
+button[type="submit"]:not(.delete-btn):hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Delete Button 
+button.delete-btn,
+form button[type="submit"]:last-of-type {
+    background-color: #dc3545; /* Red 
+    color: white;
+}
+
+button.delete-btn:hover,
+form button[type="submit"]:last-of-type:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Cancel Link 
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive 
+@media screen and (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    a {
+        display: block;
+        margin: 10px 0 0 0;
+    }
+} */
+
+/* Update Project Form */
+.update-project-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #f0f8ff; /* light blue background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.update-project-container h1 {
+    text-align: center;
+    color: #1e3a8a; /* dark blue */
+    margin-bottom: 20px;
+}
+
+.update-project-container input[type="text"],
+.update-project-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.update-project-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.update-project-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-project-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .update-project-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .update-project-container input,
+    .update-project-container textarea,
+    .update-project-container button {
+        font-size: 14px;
+    }
+}
+
+/* Delete Project Form */
+.delete-project-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #fff0f0; /* soft red/pink background */
+    border: 1px solid #ff4d4d;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.delete-project-container h1 {
+    color: #b30000; /* dark red */
+    margin-bottom: 15px;
+}
+
+.delete-project-container p {
+    font-size: 16px;
+    color: #660000; /* deep red */
+    margin-bottom: 20px;
+}
+
+.delete-project-container button {
+    padding: 12px 25px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.delete-project-container button:hover {
+    background-color: #b30000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.delete-project-container a {
+    padding: 12px 25px;
+    background-color: #ccc;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.delete-project-container a:hover {
+    background-color: #999;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .delete-project-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .delete-project-container button,
+    .delete-project-container a {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+/* Update Bug Form */
+.update-bug-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #e6f2ff; /* soft blue background */
+    border: 1px solid #3399ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.update-bug-container h1 {
+    color: #004080; /* dark blue */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.update-bug-container input[type="text"],
+.update-bug-container textarea,
+.update-bug-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #99ccff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.update-bug-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #004080;
+}
+
+.update-bug-container button {
+    padding: 12px 25px;
+    background-color: #3399ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.update-bug-container button:hover {
+    background-color: #004080;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .update-bug-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .update-bug-container button {
+        width: 100%;
+    }
+}
+
+/* Delete Bug Form */
+.delete-bug-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffe6e6; /* soft red background */
+    border: 1px solid #ff4d4d;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.delete-bug-container h1 {
+    color: #b30000; /* dark red */
+    margin-bottom: 20px;
+}
+
+.delete-bug-container p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #660000;
+}
+
+.delete-bug-container button {
+    padding: 12px 25px;
+    background-color: #ff4d4d; /* red */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+}
+
+.delete-bug-container button:hover {
+    background-color: #b30000; /* dark red */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.delete-bug-container a {
+    padding: 12px 25px;
+    background-color: #cccccc;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.delete-bug-container a:hover {
+    background-color: #999999;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .delete-bug-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .delete-bug-container button, 
+    .delete-bug-container a {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

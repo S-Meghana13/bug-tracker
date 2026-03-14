@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Tracker Home</title>
+    <link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+    <style>
+        /* Additional styles for home page hero section */
+        .hero {
+            /* background: linear-gradient(to bottom, #a8dadc, #f1faee), url("{% static 'tracker/home-hero.jpg' %}"); */
+            background-size: cover;
+            background-position: center;
+            background: linear-gradient(to bottom, #a8dadc, #f1faee); /* Light blue to soft off-white */
+            color: #1d3557; 
+            /* color: white;
+            background-color: #007bff; */
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+        }
+
+        .hero a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <div>
+            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container hero slide-down">
+        <h1>Welcome to Bug Tracker</h1>
+        <p>Track your projects, manage bugs, and collaborate efficiently.</p>
+        <a href="{% url 'signup' %}">Get Started</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container slide-down">
+        <h2>Features</h2>
+        <div class="card">
+            <h3>Project Management</h3>
+            <p>Create and manage multiple projects with ease.</p>
+        </div>
+        <div class="card">
+            <h3>Bug Tracking</h3>
+            <p>Report, assign, and track bugs effectively.</p>
+        </div>
+        
+        <div class="card collaboration-card" style="background-color: #dcfce7; color: #7a1e57;">
+            <h3>Collaboration</h3>
+            <p>Work with your team and stay updated in real-time.</p>
+        </div>
+    
+    </div>
+</body>
+</html>

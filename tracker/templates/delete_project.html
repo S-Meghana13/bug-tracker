@@ -1,0 +1,14 @@
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+
+<div class="delete-project-container">
+    <h1>Delete Project</h1>
+    <p>Are you sure you want to delete "{{ project.name }}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'dashboard' %}">Cancel</a>
+    </form>
+</div>

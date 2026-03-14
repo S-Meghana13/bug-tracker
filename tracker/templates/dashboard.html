@@ -1,0 +1,111 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+        .edit-btn { background-color: #28a745; }
+        .edit-btn:hover { background-color: #218838; }
+        .delete-btn { background-color: #dc3545; }
+        .delete-btn:hover { background-color: #c82333; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'add_project' %}">Add Project</a>
+        <a href="{% url 'add_bug' %}">Add Bug</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome, {{ request.user.username }}</h1>
+
+        <!-- Projects Table -->
+        <div class="projects" id="projects-slide">
+            <h2>Projects</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created By</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in projects %}
+                        <tr>
+                            <td>{{ project.name }}</td>
+                            <td>{{ project.description }}</td>
+                            <td>{{ project.created_by.username }}</td>
+                            <td>
+                                <a href="{% url 'update_project' project.id %}" class="btn edit-btn">Edit</a>
+                                <a href="{% url 'delete_project' project.id %}" class="btn delete-btn">Delete</a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">No projects found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bugs Table -->
+        <div class="bugs">
+            <h2>Bugs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Project</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bug in bugs %}
+                        <tr>
+                            <td>{{ bug.title }}</td>
+                            <td>{{ bug.project.name }}</td>
+                            <td class="priority-{{ bug.priority|lower }}">{{ bug.priority }}</td>
+                            <td>{{ bug.status }}</td>
+                            <td>{{ bug.assigned_to.username }}</td>
+                            <td>
+                                <a href="{% url 'update_bug' bug.id %}" class="btn edit-btn">Edit</a>
+                                <a href="{% url 'delete_bug' bug.id %}" class="btn delete-btn">Delete</a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="6">No bugs found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#projects-slide").hide().slideDown(1000);
+        });
+    </script>
+</body>
+</html>
